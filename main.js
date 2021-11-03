@@ -74,12 +74,6 @@ allSpans.forEach(function(rato) {
     
     // atribui o evento e respertiva função a cada um
     rato.addEventListener('pointerover', changeOpacity);
-//});
-
-    //tive de resolver de outra forma para o touch funcionar
-//['mouseover','touchstart'].forEach( function(evt) {
- // rato.addEventListener(evt, changeOpacity,false);
-//});
 });
 
 
@@ -111,52 +105,21 @@ function changeOpacity(r) {
 //////definir o cursor
 
 //identificar o cursor por mim definido
-//let cursor = document.querySelector('.cursor');
+let cursor = document.querySelector('.cursor');
 
 //cria-se um evento
-//document.addEventListener('pointermove', function (c){
-
-    //tive de resolver de outra forma para o touch funcionar
-   // ['mousemove','touchstart'].forEach( function(evt) {
-    //  document.addEventListener(evt, function(c){
-    
+document.addEventListener('pointermove', function (c){    
 
   //ir 'buscar' posição do rato
     //console.log(c.pageX , c.pageY);
 
   //coloca-a em variáveis
-   // let posX= c.pageX;
-   // let posY= c.pageY;
-   //usa-se estas variáveis para definir a localização do círculo
-   // cursor.style.left = posX + 'px';
-  //  cursor.style.top = posY + 'px' ;
- // },true);
-//});
-
-let cursor = document.querySelector('.cursor');
-
-function beginMove(e) {
- cursor.pointermove = mover;
-  cursor.setPointerCapture(e.pointerId);
-}
-
-function stopMove(e) {
-  cursor.pointermove = null;
-  cursor.releasePointerCapture(e.pointerId);
-}
-
-function mover(e) {
-  let posX= c.pageX;
+    let posX= c.pageX;
     let posY= c.pageY;
    //usa-se estas variáveis para definir a localização do círculo
     cursor.style.left = posX + 'px';
     cursor.style.top = posY + 'px' ;
   },true);
-}
-
-cursor.pointerdown = beginMove;
-cursor.pointerup = stopMove;
-
 
 
 
