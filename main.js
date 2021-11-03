@@ -78,7 +78,7 @@ allSpans.forEach(function(rato) {
 
     //tive de resolver de outra forma para o touch funcionar
 ['mouseover','touchover'].forEach( function(evt) {
-  rato.addEventListener(evt, changeOpacity,false);
+  rato.addEventListener(evt, changeOpacity);
 });
 });
 
@@ -114,7 +114,12 @@ function changeOpacity(r) {
 let cursor = document.querySelector('.cursor');
 
 //cria-se um evento
-document.addEventListener('mousemove', function (c){
+//document.addEventListener('mousemove', function (c){
+
+    //tive de resolver de outra forma para o touch funcionar
+    ['mousemove','touchmove'].forEach( function(evt) {
+      document.addEventListener(evt, function(c){
+    
 
   //ir 'buscar' posição do rato
     //console.log(c.pageX , c.pageY);
@@ -125,7 +130,8 @@ document.addEventListener('mousemove', function (c){
    //usa-se estas variáveis para definir a localização do círculo
     cursor.style.left = posX + 'px';
     cursor.style.top = posY + 'px' ;
-})
+  });
+});
 
 
 
