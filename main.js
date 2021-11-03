@@ -9,7 +9,7 @@
 
 //////criar ciclos para escrever a palavra PRIVACY no fundo
 //na vertical
-for(let i=0; i<70; i++){
+for(let i=0; i<80; i++){
     
  //criar array com as letras da palavra
  let privacy=[7];
@@ -28,7 +28,7 @@ for(let i=0; i<70; i++){
 
 
     //na horizontal
-    for(let k=i; k<70; k++){
+    for(let k=i; k<80; k++){
 
       //definir que cada letra vai ser um span
       let letra = document.createElement("span");
