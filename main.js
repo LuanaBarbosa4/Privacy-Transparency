@@ -117,7 +117,7 @@ let cursor = document.querySelector('.cursor');
 //document.addEventListener('mousemove', function (c){
 
     //tive de resolver de outra forma para o touch funcionar
-    ['mousemove','pointermove'].forEach( function(evt) {
+    ['mousemove','touchmove'].forEach( function(evt) {
       document.addEventListener(evt, function(c){
     
 
@@ -130,7 +130,7 @@ let cursor = document.querySelector('.cursor');
    //usa-se estas variáveis para definir a localização do círculo
     cursor.style.left = posX + 'px';
     cursor.style.top = posY + 'px' ;
-  },false);
+  },true);
 });
 
 
