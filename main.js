@@ -117,7 +117,7 @@ let cursor = document.querySelector('.cursor');
 //document.addEventListener('mousemove', function (c){
 
     //tive de resolver de outra forma para o touch funcionar
-    ['mousemove','touchmove'].forEach( function(evt) {
+    ['mousemove','click'].forEach( function(evt) {
       document.addEventListener(evt, function(c){
     
 
