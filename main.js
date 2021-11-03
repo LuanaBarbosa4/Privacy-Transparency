@@ -78,7 +78,7 @@ allSpans.forEach(function(rato) {
 
     //tive de resolver de outra forma para o touch funcionar
 ['mouseover','touchover'].forEach( function(evt) {
-  rato.addEventListener(evt, changeOpacity);
+  rato.addEventListener(evt, changeOpacity,false);
 });
 });
 
@@ -130,7 +130,7 @@ let cursor = document.querySelector('.cursor');
    //usa-se estas variáveis para definir a localização do círculo
     cursor.style.left = posX + 'px';
     cursor.style.top = posY + 'px' ;
-  });
+  },false);
 });
 
 
