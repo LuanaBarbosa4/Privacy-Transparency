@@ -73,7 +73,13 @@ for(let i = 0; i < allSpans.length; i++) {
 allSpans.forEach(function(rato) {
     
     // atribui o evento e respertiva função a cada um
-    rato.addEventListener('mouseover', changeOpacity);
+   // rato.addEventListener('mouseover', changeOpacity);
+//});
+
+    //tive de resolver de outra forma para o touch funcionar
+['mouseover','touchstart'].forEach( function(evt) {
+  rato.addEventListener(evt, changeOpacity,false);
+});
 });
 
 
