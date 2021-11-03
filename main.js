@@ -73,13 +73,13 @@ for(let i = 0; i < allSpans.length; i++) {
 allSpans.forEach(function(rato) {
     
     // atribui o evento e respertiva função a cada um
-   // rato.addEventListener('mouseover', changeOpacity);
+    rato.addEventListener('pointerover', changeOpacity);
 //});
 
     //tive de resolver de outra forma para o touch funcionar
-['mouseover','touchover'].forEach( function(evt) {
-  rato.addEventListener(evt, changeOpacity,false);
-});
+//['mouseover','touchstart'].forEach( function(evt) {
+ // rato.addEventListener(evt, changeOpacity,false);
+//});
 });
 
 
@@ -114,11 +114,11 @@ function changeOpacity(r) {
 let cursor = document.querySelector('.cursor');
 
 //cria-se um evento
-//document.addEventListener('mousemove', function (c){
+document.addEventListener('pointermove', function (c){
 
     //tive de resolver de outra forma para o touch funcionar
-    ['mousemove','click'].forEach( function(evt) {
-      document.addEventListener(evt, function(c){
+   // ['mousemove','touchstart'].forEach( function(evt) {
+    //  document.addEventListener(evt, function(c){
     
 
   //ir 'buscar' posição do rato
@@ -131,7 +131,8 @@ let cursor = document.querySelector('.cursor');
     cursor.style.left = posX + 'px';
     cursor.style.top = posY + 'px' ;
   },true);
-});
+//});
+
 
 
 
