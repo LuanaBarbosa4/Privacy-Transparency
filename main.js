@@ -77,7 +77,7 @@ allSpans.forEach(function(rato) {
 //});
 
     //tive de resolver de outra forma para o touch funcionar
-['mouseover','touchstart'].forEach( function(evt) {
+['mouseover','touchmove'].forEach( function(evt) {
   rato.addEventListener(evt, changeOpacity,false);
 });
 });
