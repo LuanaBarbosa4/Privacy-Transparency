@@ -111,10 +111,10 @@ function changeOpacity(r) {
 //////definir o cursor
 
 //identificar o cursor por mim definido
-let cursor = document.querySelector('.cursor');
+//let cursor = document.querySelector('.cursor');
 
 //cria-se um evento
-document.addEventListener('pointermove', function (c){
+//document.addEventListener('pointermove', function (c){
 
     //tive de resolver de outra forma para o touch funcionar
    // ['mousemove','touchstart'].forEach( function(evt) {
@@ -125,13 +125,37 @@ document.addEventListener('pointermove', function (c){
     //console.log(c.pageX , c.pageY);
 
   //coloca-a em variáveis
-    let posX= c.pageX;
+   // let posX= c.pageX;
+   // let posY= c.pageY;
+   //usa-se estas variáveis para definir a localização do círculo
+   // cursor.style.left = posX + 'px';
+  //  cursor.style.top = posY + 'px' ;
+ // },true);
+//});
+
+let cursor = document.querySelector('.cursor');
+
+function beginMove(e) {
+ cursor.onpointermove = cursor;
+  cursor.setPointerCapture(e.pointerId);
+}
+
+function stopMove(e) {
+  cursor.onpointermove = null;
+  cursor.releasePointerCapture(e.pointerId);
+}
+
+function mover(e) {
+  let posX= c.pageX;
     let posY= c.pageY;
    //usa-se estas variáveis para definir a localização do círculo
     cursor.style.left = posX + 'px';
     cursor.style.top = posY + 'px' ;
   },true);
-//});
+}
+
+cursor.onpointerdown = beginMove;
+cursor.onpointerup = stopMove;
 
 
 
