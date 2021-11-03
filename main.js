@@ -136,12 +136,12 @@ function changeOpacity(r) {
 let cursor = document.querySelector('.cursor');
 
 function beginMove(e) {
- cursor.onpointermove = cursor;
+ cursor.pointermove = mover;
   cursor.setPointerCapture(e.pointerId);
 }
 
 function stopMove(e) {
-  cursor.onpointermove = null;
+  cursor.pointermove = null;
   cursor.releasePointerCapture(e.pointerId);
 }
 
@@ -154,8 +154,8 @@ function mover(e) {
   },true);
 }
 
-cursor.onpointerdown = beginMove;
-cursor.onpointerup = stopMove;
+cursor.pointerdown = beginMove;
+cursor.pointerup = stopMove;
 
 
 
